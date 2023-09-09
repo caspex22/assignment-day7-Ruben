@@ -1,0 +1,33 @@
+name: Deploy express-mongo
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use nodejs v3
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+        
+        name: Using ssh key
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_FILE }}
+          script:
+            whoami
+            ls -al
+            cd /home/ubuntu/express-aws
+            git pull origin main
+            npm install
+            pm2 restart ./dist/main.js
