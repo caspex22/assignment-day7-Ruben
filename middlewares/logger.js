@@ -6,3 +6,5 @@ module.exports = function (req, res, next) {
     fs.appendFileSync(path.join(__dirname, '../', 'logger.log'), logEntry);
     next();
 };
+
+//tes

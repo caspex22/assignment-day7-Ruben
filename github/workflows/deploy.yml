@@ -16,7 +16,7 @@ jobs:
       - name: Use nodejs v3
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 12
         
         name: Using ssh key
         uses: appleboy/ssh-action@v1.0.0
@@ -27,7 +27,7 @@ jobs:
           script:
             whoami
             ls -al
-            cd /home/ubuntu/express-aws
+            cd /home/ubuntu/assignment-day7-Ruben
             git pull origin main
             npm install
             pm2 restart ./dist/main.js
