@@ -24,7 +24,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_FILE }}
-          script:
+          script: |
             whoami
             ls -al
             cd /home/ubuntu/assignment-day7-Ruben
