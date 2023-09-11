@@ -30,4 +30,4 @@ jobs:
             cd /home/ubuntu/assignment-day7-Ruben
             git pull origin main
             npm install
-            npm start
+            npm run app.js
