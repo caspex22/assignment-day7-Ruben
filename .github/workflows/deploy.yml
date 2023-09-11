@@ -16,7 +16,7 @@ jobs:
       - name: Use nodejs 18
         uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 18.17.1
         
       - name: Using ssh key
         uses: appleboy/ssh-action@v1.0.0
